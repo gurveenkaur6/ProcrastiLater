@@ -2,6 +2,7 @@ import { StyleSheet, TextInput, View, Text, TouchableOpacity, FlatList } from 'r
 import React, { useState } from 'react'
 import { IconButton } from 'react-native-paper';
 import Fallback from '../components/Fallback';
+import Button from '../components/Button';
 
 
 
@@ -102,8 +103,8 @@ const TodoScreen = () => {
         />
     ) : (
         <Button
-        title = "Add"
-        onPress={handleAddTodo}
+            title="Add"
+            onPress={handleAddTodo}
         />
     )
 }
