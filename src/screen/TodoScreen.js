@@ -95,31 +95,16 @@ const TodoScreen = () => {
 
 {
     editId ? (
-        <TouchableOpacity
-            style={{
-                backgroundColor: '#B33951',
-                borderRadius: 6,
-                paddingVertical: 12,
-                marginVertical: 34,
-                alignItems: "center"
-            }}
-            onPress={() => handleUpdateTodo()}
-        >
-            <Text style={{ color: '#fff', fontWeight: "bold", fontSize: 15 }}>Save</Text>
-        </TouchableOpacity>
+        // a reusable button that takes title, onPress, and style as props
+        <Button
+            title="Save"
+            onPress={handleUpdateTodo}
+        />
     ) : (
-        <TouchableOpacity
-            style={{
-                backgroundColor: '#B33951',
-                borderRadius: 6,
-                paddingVertical: 12,
-                marginVertical: 34,
-                alignItems: "center"
-            }}
-            onPress={() => handleAddTodo()}
-        >
-            <Text style={{ color: '#fff', fontWeight: "bold", fontSize: 15 }}>Add</Text>
-        </TouchableOpacity>
+        <Button
+        title = "Add"
+        onPress={handleAddTodo}
+        />
     )
 }
         
