@@ -1,18 +1,9 @@
 import { StyleSheet, TextInput, View, Text, TouchableOpacity, FlatList } from 'react-native'
 import React, { useState } from 'react'
 import { IconButton } from 'react-native-paper';
+import Fallback from '../components/Fallback';
 
 
-const todoItems=[
-    {
-        id:"01",
-        title:"Complete Project",
-    },
-    {
-        id:"02",
-        title:"Do Laundry",
-    },
-];
 
 const TodoScreen = () => {
 
@@ -42,10 +33,14 @@ const TodoScreen = () => {
                 backgroundColor: "#B3B3F1",
                 borderRadius: 6,
                 paddingHorizontal:6,
-                paddingVertical: 12,
+                paddingVertical: 8,
                 marginBottom: 12,
                 flexDirection: 'row',
                 alignItems: "center",
+                shadowColor:"#000",
+                shadowOffset:{width:0, height:2},
+                shadowOpacity: 1,
+                shadowRadius: 3,
             }}>
                 
                 <Text style= {{
@@ -68,7 +63,7 @@ const TodoScreen = () => {
             borderColor: "#1e90ff",
             borderRadius: 6,
             paddingHorizontal: 16,
-            paddingVertical: 6
+            paddingVertical: 8,
         }}
         placeholder="Add a task"
 
@@ -78,7 +73,7 @@ const TodoScreen = () => {
         <TouchableOpacity style={{
             backgroundColor: '#B33951', 
             borderRadius:6, 
-            paddingVertical:8, 
+            paddingVertical:12, 
             marginVertical: 34, 
             alignItems: "center"
         }}
@@ -87,8 +82,12 @@ const TodoScreen = () => {
 
             <Text style={{color:'#fff', fontWeight: "bold", fontSize:15}}>Add</Text>
         </TouchableOpacity>
+
         {/* {Render ToDo List} */}
         <FlatList data = {todoList} renderItem = {renderTodos}></FlatList>
+
+        {todoList.length <= 0 && <Fallback />}
+
         
     </View>
   )
