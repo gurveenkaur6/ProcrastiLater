@@ -8,7 +8,6 @@ export default function App() {
     <SafeAreaView>
       <View>
         <TodoScreen></TodoScreen>
-        
       </View>
     </SafeAreaView>
   );

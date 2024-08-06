@@ -12,6 +12,7 @@
       "backgroundColor": "#C7CB85"
     },
     "ios": {
+      "name": "ProcastiLater",
       "supportsTablet": true
     },
     "android": {
